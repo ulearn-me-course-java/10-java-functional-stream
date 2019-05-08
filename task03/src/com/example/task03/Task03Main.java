@@ -1,7 +1,9 @@
 package com.example.task03;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task03Main {
@@ -21,7 +23,8 @@ public class Task03Main {
             Stream<? extends T> stream,
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
-
-        // your implementation here
+        List<T> tStream = stream.sorted(order).collect(Collectors.toList());
+        if (tStream.isEmpty())  minMaxConsumer.accept(null, null);
+        else minMaxConsumer.accept(tStream.get(0), tStream.get(tStream.size() -  1));
     }
 }
