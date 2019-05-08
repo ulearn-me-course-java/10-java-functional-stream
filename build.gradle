@@ -25,8 +25,7 @@ subprojects {
         enableAssertions = true
     }
 
-    junitPlatformTest {
-        // https://stackoverflow.com/questions/48172010/enabling-assertions-in-gradle-junit
+    tasks.withType(Test) {
         enableAssertions = true
     }
 
