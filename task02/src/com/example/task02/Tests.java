@@ -3,7 +3,9 @@ package com.example.task02;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Tests {
@@ -49,7 +51,6 @@ public class Tests {
 
     @Test
     public void test12() {
-
         Assertions.assertThat(
                 Task02Main.cycleGrayCode(12).skip(1000000).limit(10)
         ).containsExactlyElementsOf(
