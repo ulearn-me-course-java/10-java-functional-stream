@@ -1,7 +1,9 @@
 package com.example.task03;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class Task03Main {
@@ -21,7 +23,23 @@ public class Task03Main {
             Stream<? extends T> stream,
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
+        if (stream == null || order == null)
+            throw new NullPointerException();
+        T[] arrStream = (T[]) stream.toArray();
+        if (arrStream.length != 0) {
+            T min = getValueOrNull(() -> Arrays.stream(arrStream).min(order).get());
+            T max = getValueOrNull(() -> Arrays.stream(arrStream).max(order).get());
+            minMaxConsumer.accept(min, max);
+        } else {
+            minMaxConsumer.accept(null, null);
+        }
+    }
 
-        // your implementation here
+    static <T> T getValueOrNull(Supplier<T> supplier) {
+        try {
+            return supplier.get();
+        } catch (NullPointerException e) {
+            return null;
+        }
     }
 }
