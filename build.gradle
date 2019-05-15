@@ -25,10 +25,10 @@ subprojects {
         enableAssertions = true
     }
 
-//    junitPlatformTest {
-//        // https://stackoverflow.com/questions/48172010/enabling-assertions-in-gradle-junit
-//        enableAssertions = true
-//    }
+    junitPlatformTest {
+        // https://stackoverflow.com/questions/48172010/enabling-assertions-in-gradle-junit
+        enableAssertions = true
+    }
 
     group 'java-base'
     version '1.0-SNAPSHOT'
