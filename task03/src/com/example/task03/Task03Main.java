@@ -1,7 +1,10 @@
 package com.example.task03;
 
 import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task03Main {
@@ -21,7 +24,9 @@ public class Task03Main {
             Stream<? extends T> stream,
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
+        T[] arr = (T[])stream.sorted(order).toArray();
 
-        // your implementation here
+        if (arr.length == 0) minMaxConsumer.accept(null, null);
+        else minMaxConsumer.accept(arr[0], arr[arr.length - 1]);
     }
 }
