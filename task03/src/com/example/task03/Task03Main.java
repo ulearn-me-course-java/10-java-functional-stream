@@ -21,7 +21,16 @@ public class Task03Main {
             Stream<? extends T> stream,
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
+        if (stream == null || order == null)
+            throw new NullPointerException();
+        T[] arrStream = (T[]) stream.sorted(order).toArray();
 
-        // your implementation here
+        if (arrStream.length != 0) {
+            T min = arrStream[0];
+            T max = arrStream[arrStream.length - 1];
+            minMaxConsumer.accept(min, max);
+        } else {
+            minMaxConsumer.accept(null, null);
+        }
     }
 }
