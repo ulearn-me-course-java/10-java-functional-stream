@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.BiConsumer;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Tests {
@@ -58,6 +59,21 @@ public class Tests {
     @Test
     public void testString() {
         check(new String[]{"q", "w", "e", "r", "t", "y"}, String::compareTo, "e", "y");
+    }
+
+    /**
+     * В этом тесте поток выдает довольно много информации.
+     * Попытайтесь не размещать все данные в памяти.
+     */
+    @Test
+    public void testBig() {
+        MinMaxConsumer<Long> consumer = new MinMaxConsumer<>();
+        Task03Main.findMinMax(IntStream.range(7, 200000008).mapToObj(Long::valueOf), Long::compare, consumer);
+        SoftAssertions sa = new SoftAssertions();
+        sa.assertThat(consumer.calls).as("BiConsumer calls").isEqualTo(1);
+        sa.assertThat(consumer.min).as("min for input: 7..200000007").isEqualTo(7);
+        sa.assertThat(consumer.max).as("max for input: 7..200000007").isEqualTo(200000007);
+        sa.assertAll();
     }
 
     @Test
