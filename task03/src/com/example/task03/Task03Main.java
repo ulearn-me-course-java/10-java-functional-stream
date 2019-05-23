@@ -25,7 +25,7 @@ public class Task03Main {
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
         T[] streamCopy = (T[]) stream.toArray();
-        if (order == null) throw new NullPointerException();
+        if (order == null || stream == null) throw new NullPointerException();
         if (streamCopy.length == 0)
             minMaxConsumer.accept(null, null);
         else {
