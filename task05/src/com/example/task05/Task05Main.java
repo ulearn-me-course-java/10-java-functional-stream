@@ -9,8 +9,6 @@ public class Task05Main {
 
     public static void main(String[] args) {
 
-        /*
-
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
         String randomTo = "...";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -50,7 +48,7 @@ public class Task05Main {
         messages.stream().forEachOrdered(mailService);
 
         // Получение и проверка словаря "почтового ящика",
-        //   где по получателю можно получить список сообщений, которые были ему отправлены
+        // где по получателю можно получить список сообщений, которые были ему отправлены
         Map<String, List<String>> mailBox = mailService.getMailBox();
 
         assert mailBox.get("H.P. Lovecraft").equals(
@@ -86,10 +84,6 @@ public class Task05Main {
         assert salaries.get(salary1.getTo()).equals(Arrays.asList(1)) : "wrong salaries mailbox content (1)";
         assert salaries.get(salary2.getTo()).equals(Arrays.asList(Integer.MAX_VALUE)) : "wrong salaries mailbox content (2)";
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
-
-
-        */
-
     }
 
 }
