@@ -21,15 +21,10 @@ public class Task04Main {
                     .forEach(
                         line -> {
                             String new_line = line.replaceAll("\\p{Punct}", " ").
-                                    replaceAll("  ", " ").replaceAll(" ", ",");
+                                replaceAll("  ", " ").replaceAll(" ", ",");
 
-                            for (String str: new_line.split(",")) {
-                                if (!map.containsKey(str))
-                                    map.put(str, 0L);
-
-                                Long counter = map.get(str);
-                                map.put(str, ++counter);
-                            }
+                            for (String str: new_line.split(","))
+                                map.put(str, map.containsKey(str) ? map.get(str) + 1 : 0);
                         }
                     );
         }
@@ -37,11 +32,10 @@ public class Task04Main {
             ex.printStackTrace();
         }
 
-        map.entrySet().stream()
+        map.entrySet()
+            .stream()
             .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
             .limit(10)
-            .forEach(
-                v ->  System.out.print(v.getKey() + "\n")
-            );
+            .forEach(v -> System.out.print(v.getKey() + "\n"));
     }
 }
