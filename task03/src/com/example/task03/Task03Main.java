@@ -1,7 +1,10 @@
 package com.example.task03;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class Task03Main {
@@ -21,7 +24,14 @@ public class Task03Main {
             Stream<? extends T> stream,
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
-
+        T[] streamCopy = (T[]) stream.toArray();
+        if (order == null) throw new NullPointerException();
+        if (streamCopy.length == 0)
+            minMaxConsumer.accept(null, null);
+        else {
+            Arrays.sort(streamCopy, order);
+            minMaxConsumer.accept(streamCopy[0], streamCopy[streamCopy.length - 1]);
+        }
         // your implementation here
     }
 }
