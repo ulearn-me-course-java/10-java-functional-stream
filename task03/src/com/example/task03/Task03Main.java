@@ -11,12 +11,12 @@ public class Task03Main {
 
     public static void main(String[] args) {
 
-        findMinMax(
+       /* findMinMax(
                 Stream.of(2, 9, 5, 4, 8, 1, 3),
                 Integer::compareTo,
                 (min, max) ->
                         System.out.println("min: " + min + " / max: " + max)
-        );
+        );*/
 
     }
 
@@ -27,6 +27,5 @@ public class Task03Main {
         List<T> list = stream.sorted(order).collect(Collectors.toList());
         if (list.isEmpty()) minMaxConsumer.accept(null, null);
         else minMaxConsumer.accept(list.get(0), list.get(list.size() - 1));
-
     }
 }
