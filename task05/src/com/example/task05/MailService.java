@@ -8,9 +8,10 @@ import java.util.function.Consumer;
 
 public class MailService<T> implements Consumer<IMessage<T>> {
 
-    private Map<String, List<T>> _mailBox = new HashMap<>();
+    private Map<String, List<T>> _mailBox = new NotNullMap<>();
 
     public Map<String, List<T>> getMailBox() { return _mailBox; }
+
 
     @Override
     public void accept(IMessage<T> message) {
@@ -21,3 +22,4 @@ public class MailService<T> implements Consumer<IMessage<T>> {
         _mailBox.get(message.getTo()).add(message.getContent());
     }
 }
+
