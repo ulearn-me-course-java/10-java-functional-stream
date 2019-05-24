@@ -12,11 +12,17 @@ public class Task04Main {
 
     public static void main(String[] args) throws IOException {
 
+        char[] charsForReplace = new char[]{ ',', '.', '-', '!' };
+
         Hashtable<String, Integer> dictionary = new Hashtable<>();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, Charset.forName("UTF-8")))) {
             reader.lines()
-                    .map(x -> x.replace(',', ' ').replace('.', ' ').replace('-', ' ').replace('!', ' '))
+                    .map(x -> {
+                        for(char c : charsForReplace)
+                            x = x.replace(c, ' ');
+                        return x;
+                    })
                     .flatMap(x -> Arrays.stream(x.split(" ")))
                     .filter(x -> !x.equals(".") && !x.equals(",") && !x.equals(""))
                     .map(String::toLowerCase)
@@ -33,6 +39,7 @@ public class Task04Main {
                 .sorted()
                 .sorted(Comparator.comparing(x -> dictionary.keySet().size() - dictionary.get(x)))
                 .limit(10)
-                .forEach(System.out::println);
+                .forEach(x -> System.out.print(x + '\n'));
+
     }
 }
