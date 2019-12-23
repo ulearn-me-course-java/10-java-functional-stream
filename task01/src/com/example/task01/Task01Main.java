@@ -22,8 +22,12 @@ public class Task01Main {
             Predicate<? super T> condition,
             Function<? super T, ? extends U> ifTrue,
             Function<? super T, ? extends U> ifFalse) {
+        if (condition == null || ifTrue == null || ifFalse == null) {
+            throw new NullPointerException();
+        }
 
-        return null; // your implementation here
+
+        return (x -> condition.test(x) ? ifTrue.apply(x) : ifFalse.apply(x)); // your implementation here
 
     }
 }
