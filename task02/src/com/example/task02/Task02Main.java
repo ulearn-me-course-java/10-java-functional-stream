@@ -7,7 +7,7 @@ public class Task02Main {
 
     public static void main(String[] args) {
         cycleGrayCode(3)
-                .limit(10)
+                .limit(100)
                 .forEach(System.out::println);
     }
 
@@ -15,23 +15,14 @@ public class Task02Main {
         if (n > 16 || n < 1)
             throw new IllegalArgumentException();
 
-        int[] arr = new int[(int) Math.pow(2, n)];
-        gray(n, arr, 0);
+        int codeLength = (int) Math.pow(2, n);
 
-        return IntStream.of(arr);
+        return IntStream
+                .iterate(0, it -> (it + 1) % codeLength)
+                .map(Task02Main::nextGrayNumber);
     }
 
-    static void gray(int n, int[] m, int depth) {
-        int t = (1 << (depth - 1));
-
-        if (depth == 0) {
-            m[0] = 0;
-        } else {
-            for (int i = 0; i < t; i++)
-                m[t + i] = m[t - i - 1] + (1 << (depth - 1));
-        }
-        if (depth != n)
-            gray(n, m, depth + 1);
+    private static int nextGrayNumber(int current){
+        return current ^ (current >> 1);
     }
-
 }
