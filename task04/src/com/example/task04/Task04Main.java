@@ -31,8 +31,18 @@ public class Task04Main {
 
         dict.entrySet()
                 .stream()
-                .sorted((x, y) -> Integer.compare(y.getValue(), x.getValue()))
+                .sorted(new EntryComparator())
                 .limit(10)
                 .forEach(it -> System.out.println(it.getKey()));
+    }
+}
+
+class EntryComparator implements Comparator<Map.Entry<String, Integer>> {
+
+    @Override
+    public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+        return e2.getValue().compareTo(e1.getValue()) != 0
+                ? e2.getValue().compareTo(e1.getValue())
+                : e1.getKey().compareTo(e2.getKey());
     }
 }
