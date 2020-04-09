@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public class Task04Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in, Charset.forName("UTF-8")));
       reader.lines()
             .map(String::toLowerCase)
