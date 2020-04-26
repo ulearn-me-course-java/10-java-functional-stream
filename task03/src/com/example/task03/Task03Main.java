@@ -1,9 +1,8 @@
 package com.example.task03;
 
-import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.function.BiConsumer;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task03Main {
@@ -26,12 +25,18 @@ public class Task03Main {
 
         T min = null;
         T max = null;
-        ArrayList<T> arrayList = stream
-                .sorted(order)
-                .collect(Collectors.toCollection(ArrayList::new));
-        if (arrayList.size() != 0) {
-            min = arrayList.get(0);
-            max = arrayList.get(arrayList.size() - 1);
+        Iterator<? extends T> iterator= stream.iterator();
+
+        if(iterator.hasNext())
+            min=max=iterator.next();
+
+        while (iterator.hasNext()){
+
+            T current = iterator.next();
+            if (max == null || order.compare(max, current) < 0)
+                max = current;
+            else if (min == null || order.compare(current, min) < 0)
+                min = current;
         }
         minMaxConsumer.accept(min, max);
     }
