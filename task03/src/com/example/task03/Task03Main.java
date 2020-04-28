@@ -2,6 +2,7 @@ package com.example.task03;
 
 import java.util.Comparator;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class Task03Main {
@@ -22,6 +23,10 @@ public class Task03Main {
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
 
-        // your implementation here
+        MinMaxCompareConsumer<T> consumer = new MinMaxCompareConsumer<>(order);
+
+        stream.forEach(consumer);
+        
+        minMaxConsumer.accept(consumer.min, consumer.max);
     }
 }
