@@ -12,7 +12,7 @@ public class Task02Main {
     }
 
     public static IntStream cycleGrayCode(int n) {
-        if (n>17 || n<1){
+        if (n>16 || n<1){
             throw new IllegalArgumentException("Argument is out of range");
         }
 
