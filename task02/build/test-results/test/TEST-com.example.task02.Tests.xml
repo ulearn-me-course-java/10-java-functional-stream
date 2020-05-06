@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.task02.Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-05-06T11:07:57" hostname="LAPTOP-TKPCN0IG" time="0.861">
+  <properties/>
+  <testcase name="testExample1" classname="com.example.task02.Tests" time="0.522"/>
+  <testcase name="testExample2" classname="com.example.task02.Tests" time="0.001"/>
+  <testcase name="test10" classname="com.example.task02.Tests" time="0.009"/>
+  <testcase name="test12" classname="com.example.task02.Tests" time="0.295"/>
+  <testcase name="test16" classname="com.example.task02.Tests" time="0.017"/>
+  <testcase name="testBounds" classname="com.example.task02.Tests" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
