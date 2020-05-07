@@ -23,7 +23,7 @@ public class Task04Main {
                 .sorted(Comparator.comparingLong((ToLongFunction<Entry<String, Long>>) Entry::getValue)
                         //принимает функцию в качестве параметра, которая извлекает длинный ключ сортировки из типа T,
                         //и возвращает Comparator, который сравнивается по этому ключу сортировки
-                        .reversed()//сортирует массив в обратном порядке
+                        .reversed() //сортирует массив в обратном порядке
                         .thenComparing(Entry::getKey))
                 .limit(10)
                 .forEach(t -> System.out.print(t.getKey() + "\n"));
