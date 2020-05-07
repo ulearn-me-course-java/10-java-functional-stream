@@ -14,14 +14,16 @@ public class Task04Main {
 
         new BufferedReader(new InputStreamReader(System.in))
                 .lines()
-                .flatMap(x -> Stream.of(x.split("[^\\p{L}]")))
-                .map(String::toLowerCase)
+                .flatMap(x -> Stream.of(x.split("[^\\p{L}]"))
+                        .filter(s->!s.isEmpty())
+                        .map(String::toLowerCase))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet()
                 .stream()
+                .sorted(Map.Entry.comparingByKey())
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(10)
                 .map(Map.Entry::getKey)
-                .forEach(System.out::println);
+                .forEach(x -> System.out.print(x + '\n'));
     }
 }
