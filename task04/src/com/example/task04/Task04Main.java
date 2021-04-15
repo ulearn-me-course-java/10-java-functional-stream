@@ -1,4 +1,5 @@
 package com.example.task04;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Comparator;
@@ -10,7 +11,7 @@ public class Task04Main {
         new BufferedReader(new InputStreamReader(System.in))
                 .lines()
                 .flatMap(x -> Stream.of((x.split("[\\P{L}&&\\P{Digit}]"))))
-                .filter(String::isEmpty)
+                .filter(x->!x.isEmpty())
                 .map(String::toLowerCase)
                 .collect(Collectors.toMap(k -> k, v -> 1, Integer::sum))
                 .entrySet()
