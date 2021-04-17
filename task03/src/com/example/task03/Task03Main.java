@@ -15,6 +15,7 @@ public class Task03Main {
                         System.out.println("min: " + min + " / max: " + max)
         );
 
+
     }
 
     public static <T> void findMinMax(
