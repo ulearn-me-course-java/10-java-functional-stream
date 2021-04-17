@@ -2,7 +2,9 @@ package com.example.task03;
 
 import java.util.Comparator;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
+
 
 public class Task03Main {
 
@@ -21,7 +23,36 @@ public class Task03Main {
             Stream<? extends T> stream,
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
+        MinMaxFinder<T> minMaxFinder = new MinMaxFinder<>(order);
+        stream.forEach(minMaxFinder);
+        minMaxConsumer.accept(minMaxFinder.min, minMaxFinder.max);
+    }
 
-        // your implementation here
+    private static class MinMaxFinder<TItem> implements Consumer<TItem> {
+
+        Comparator<? super TItem> order;
+
+        boolean ifMinNull;
+        TItem min;
+        TItem max;
+
+        private MinMaxFinder(Comparator<? super TItem> order) {
+            this.order = order;
+        }
+
+        @Override
+        public void accept(TItem value) {
+            if (value == null) {
+                min = null;
+                ifMinNull = true;
+                return;
+            }
+            if (!ifMinNull && min == null || order.compare(value, min) < 0) {
+                min = value;
+            }
+            if (max == null || order.compare(value, max) > 0) {
+                max = value;
+            }
+        }
     }
 }
