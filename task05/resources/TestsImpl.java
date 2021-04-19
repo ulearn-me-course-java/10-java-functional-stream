@@ -1,6 +1,5 @@
 package com.example.task05;
 
-import com.example.task05.ITests;
 import org.junit.Test;
 
 import java.util.Arrays;
