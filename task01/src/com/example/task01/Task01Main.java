@@ -21,9 +21,10 @@ public class Task01Main {
     public static <T, U> Function<T, U> ternaryOperator(
             Predicate<? super T> condition,
             Function<? super T, ? extends U> ifTrue,
-            Function<? super T, ? extends U> ifFalse) {
+            Function<? super T, ? extends U> ifFalse) throws NullPointerException {
+        if (condition == null || ifTrue == null || ifFalse == null)
+            throw new NullPointerException();
 
-        return null; // your implementation here
-
+        return (t) -> condition.test(t) ? ifTrue.apply(t) : ifFalse.apply(t);
     }
 }
