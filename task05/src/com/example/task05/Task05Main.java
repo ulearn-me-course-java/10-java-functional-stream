@@ -9,7 +9,7 @@ public class Task05Main {
 
     public static void main(String[] args) {
 
-        /*
+
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -26,6 +26,7 @@ public class Task05Main {
         assert firstMessage.getFrom().equals("Robert Howard") : "Wrong firstMessage from address";
         assert firstMessage.getTo().equals("H.P. Lovecraft") : "Wrong firstMessage to address";
         assert firstMessage.getContent().endsWith("Howard!") : "Wrong firstMessage content ending";
+
 
         MailMessage secondMessage = new MailMessage(
                 "Jonathan Nolan",
@@ -46,8 +47,10 @@ public class Task05Main {
         // Создание почтового сервиса.
         MailService<String> mailService = new MailService<>();
 
+
         // Обработка списка писем почтовым сервисом
         messages.stream().forEachOrdered(mailService);
+
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список сообщений, которые были ему отправлены
@@ -88,7 +91,7 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-        */
+
 
     }
 
