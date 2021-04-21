@@ -22,8 +22,13 @@ public class Task01Main {
             Predicate<? super T> condition,
             Function<? super T, ? extends U> ifTrue,
             Function<? super T, ? extends U> ifFalse) {
-
-        return null; // your implementation here
+        return condition != null && ifTrue != null && ifFalse != null ? x-> condition.test(x) ? ifTrue.apply(x) : ifFalse.apply(x) : NPEThrower();
 
     }
+
+    private static <T, U> Function<T,U> NPEThrower() {
+        throw new NullPointerException();
+    }
+
+
 }
