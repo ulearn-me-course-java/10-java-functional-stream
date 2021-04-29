@@ -24,7 +24,7 @@ public class Task04Main {
                 .sorted(Map.Entry.comparingByKey())
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(10)
-                .forEach(x -> System.out.print(x.getKey() + '\n'));;
+                .forEach(x -> System.out.print(x.getKey() + '\n'));
     }
 
 }
