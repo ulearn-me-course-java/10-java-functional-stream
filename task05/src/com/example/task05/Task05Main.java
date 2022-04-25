@@ -4,12 +4,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class Task05Main {
 
     public static void main(String[] args) {
 
-        /*
+
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -47,7 +48,7 @@ public class Task05Main {
         MailService<String> mailService = new MailService<>();
 
         // Обработка списка писем почтовым сервисом
-        messages.stream().forEachOrdered(mailService);
+     //   messages.stream().forEachOrdered(mailService);
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список сообщений, которые были ему отправлены
@@ -78,7 +79,7 @@ public class Task05Main {
         MailService<Integer> salaryService = new MailService<>();
 
         // Обработка списка зарплат почтовым сервисом
-        Arrays.asList(salary1, salary2, salary3).forEach(salaryService);
+        //  Arrays.asList(salary1, salary2, salary3).forEach(salaryService);
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список зарплат, которые были ему отправлены.
@@ -88,7 +89,7 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-        */
+
 
     }
 
