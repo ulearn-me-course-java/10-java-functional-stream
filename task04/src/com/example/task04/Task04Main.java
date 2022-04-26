@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task04Main {
-    private static final Pattern PATTERN = Pattern.compile("\\W+", Pattern.UNICODE_CHARACTER_CLASS);
+
     public static void main(String[] args){
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
