@@ -26,5 +26,4 @@ public class Task04Main {
                 .map(Map.Entry::getKey)
                 .forEach(t -> System.out.print(t + '\n'));
     }
-
 }
