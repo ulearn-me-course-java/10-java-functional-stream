@@ -1,15 +1,12 @@
 package com.example.task05;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Task05Main {
 
     public static void main(String[] args) {
 
-        /*
+
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -88,8 +85,19 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-        */
 
+        /*try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter ur age ");
+
+            int value = scanner.nextInt();
+            assert value >= 18 : " Not valid";
+
+            System.out.println("value is " + value);
+        }
+        catch (AssertionError e){
+            System.out.println("assertionError");
+        }*/
     }
 
 }
