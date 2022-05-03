@@ -1,5 +1,6 @@
 package com.example.task02;
 
+import java.io.IOException;
 import java.util.stream.IntStream;
 
 public class Task02Main {
@@ -15,9 +16,10 @@ public class Task02Main {
     }
 
     public static IntStream cycleGrayCode(int n) {
-
-        return null; // your implementation here
-
+        if (n > 16 || n < 1) throw new IllegalArgumentException("Чот не так");
+        return IntStream.iterate(0, x ->  x + 1)
+                .map(x -> x % (int) Math.pow(2, n))
+                .map(x -> x ^ (x >> 1));
     }
 
 }
