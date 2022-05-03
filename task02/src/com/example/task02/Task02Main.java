@@ -21,7 +21,6 @@ public class Task02Main {
     }
     private static int getGrayCode(int i) {
         return  i ^ (i >> 1);
-
     }
 
 }
