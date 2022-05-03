@@ -1,5 +1,7 @@
 package com.example.task01;
 
+import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
+
 import java.io.IOException;
 import java.util.Objects;
 import java.util.function.Function;
@@ -18,7 +20,7 @@ public class Task01Main
         Function<CharSequence, Integer> ifFalse = CharSequence::length;
         Function<String, Integer> safeStringLength = ternaryOperator(condition, ifTrue, ifFalse);
 
-
+        System.out.println(safeStringLength.apply("qe"));
     }
 
     public static <T, U> Function<T, U> ternaryOperator(
