@@ -24,6 +24,10 @@ public class Task05Main {
         assert firstMessage.getTo().equals("H.P. Lovecraft") : "Wrong firstMessage to address";
         assert firstMessage.getContent().endsWith("Howard!") : "Wrong firstMessage content ending";
 
+        //assert. Этот оператор используется для того, чтобы проверять определенные инварианты в коде.
+        // С помощью него возможно писать небольшие тесты и следить за корректностью своей программы
+        // (в обычной ситуации предпочтительно для этих целей использовать библиотеки для модульного тестирования, которые выходят за рамки базового курса).
+
         MailMessage secondMessage = new MailMessage(
                 "Jonathan Nolan",
                 "Christopher Nolan",
