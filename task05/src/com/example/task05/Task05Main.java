@@ -11,11 +11,10 @@ public class Task05Main
     public static void main(String[] args)
     {
 
-        /*
 
         // Random variables
-        String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
-        String randomTo = "...";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
+        String randomFrom = "asd"; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
+        String randomTo = "zxc";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
         int randomSalary = 100;  // Некоторое случайное целое положительное число. Можете выбрать его самостоятельно.
 
         // Создание списка из трех почтовых сообщений.
@@ -90,7 +89,6 @@ public class Task05Main
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-        */
 
     }
 
