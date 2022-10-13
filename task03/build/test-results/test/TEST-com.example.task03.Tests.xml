@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.task03.Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-10-13T18:23:08" hostname="DESKTOP-SPSS5I2" time="4.414">
+  <properties/>
+  <testcase name="testExample" classname="com.example.task03.Tests" time="0.461"/>
+  <testcase name="testBig" classname="com.example.task03.Tests" time="3.93"/>
+  <testcase name="testNPE" classname="com.example.task03.Tests" time="0.02"/>
+  <testcase name="testEmpty" classname="com.example.task03.Tests" time="0.001"/>
+  <testcase name="testNull" classname="com.example.task03.Tests" time="0.001"/>
+  <testcase name="testString" classname="com.example.task03.Tests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
