@@ -1,15 +1,18 @@
 package com.example.task05;
 
+import com.example.task05.ITests;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class Task05Main {
-
-    public static void main(String[] args) {
+public class TestsImpl implements ITests {
 
 
+    @Test
+    public void testExample() {
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -88,8 +91,7 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-
-
     }
+
 
 }
