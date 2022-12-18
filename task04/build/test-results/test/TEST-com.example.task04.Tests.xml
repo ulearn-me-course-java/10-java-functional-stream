@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.task04.Tests" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-12-18T19:22:21" hostname="Админ-ПК" time="2.773">
+  <properties/>
+  <testcase name="testExample1" classname="com.example.task04.Tests" time="2.763"/>
+  <testcase name="testExample2" classname="com.example.task04.Tests" time="0.001"/>
+  <testcase name="testEmpty" classname="com.example.task04.Tests" time="0.0"/>
+  <testcase name="testMarshak" classname="com.example.task04.Tests" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
