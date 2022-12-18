@@ -1,9 +1,9 @@
 package com.example.task05;
 
 public class Salary {
-    String company;
-    String person;
-    Integer salary;
+    private String company;
+    private String person;
+    private Integer salary;
     public Salary(String company, String person, Integer salary){
         this.company = company;
         this.salary = salary;
