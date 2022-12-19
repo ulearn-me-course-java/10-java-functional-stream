@@ -45,8 +45,8 @@ public class Task05Main {
 
         // Создание почтового сервиса.
         MailService<String> mailService = new MailService<>();
-        // Обработка списка писем почтовым сервисом
-        messages.stream().forEachOrdered(mailService::AddMailMessage);
+                // Обработка списка писем почтовым сервисом
+        messages.stream().forEachOrdered(mailService);
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список сообщений, которые были ему отправлены
@@ -77,7 +77,7 @@ public class Task05Main {
         MailService<Integer> salaryService = new MailService<>();
 
         // Обработка списка зарплат почтовым сервисом
-        Arrays.asList(salary1, salary2, salary3).forEach(salaryService::AddSalary);
+        Arrays.asList(salary1, salary2, salary3).forEach(salaryService);
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список зарплат, которые были ему отправлены.

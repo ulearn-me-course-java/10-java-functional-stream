@@ -1,32 +1,29 @@
 package com.example.task05;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Consumer;
 
-public class MailService<T> {
-    Map<String, List<T>> messages = new HashMap<>();
-    private List<T> ExtractMessages(String name, MailMessage message){
-        List<T> e = messages.get(name);
-        if (e == null) e = new ArrayList<T>();
-        e.add((T)message.getContent());
-        return e;
-    }
-    private List<T> ExtractSalaries(String name, Salary x){
-        List<T> e = messages.get(name);
-        if (e == null) e = new ArrayList<T>();
-        e.add((T)x.getSalary());
-        return e;
-    }
-    public void AddSalary(Salary x){
-        messages.put(x.getTo(), ExtractSalaries(x.getTo(), x));
-    }
-    public void AddMailMessage(MailMessage x){
-        messages.put(x.getTo(), ExtractMessages(x.getTo(), x));
+public class MailService<T> implements Consumer<MailForm<T>> {
+    private final Map<String, List<T>> mailBox = new HashMap<String, List<T>>() {
+        @Override
+        public List<T> get(Object key) {
+            List<T> list = super.get(key);
+            return list == null ? new ArrayList<>() : list;
+        }
+    };
+
+    public Map<String, List<T>> getMailBox() {
+        return this.mailBox;
     }
 
-    public Map<String, List<T>> getMailBox(){
-        return messages;
+    @Override
+    public void accept(MailForm<T> tForm) {
+        if (this.mailBox.containsKey(tForm.getTo())) {
+            List<T> list = this.mailBox.get(tForm.getTo());
+            list.add(tForm.getContent());
+        } else {
+            List<T> content = new ArrayList<>(Collections.singletonList(tForm.getContent()));
+            this.mailBox.put(tForm.getTo(), content);
+        }
     }
 }

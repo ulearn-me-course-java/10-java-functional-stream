@@ -9,10 +9,9 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Tests {
+public class    Tests {
 
     static ITests impl;
-
     @BeforeClass
     public static void before() throws URISyntaxException, IOException {
         String classContent = new String(Files.readAllBytes(Paths.get(Tests.class.getResource("/TestsImpl.java").toURI())));
