@@ -1,6 +1,7 @@
 package com.example.task03;
 
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.function.BiConsumer;
 import java.util.stream.Stream;
 
@@ -15,6 +16,13 @@ public class Task03Main {
                         System.out.println("min: " + min + " / max: " + max)
         );
 
+        Tests tests = new Tests();
+        tests.testNPE();
+        tests.testExample();
+        tests.testEmpty();
+        tests.testString();
+        tests.testBig();
+        tests.testNull();
     }
 
     public static <T> void findMinMax(
@@ -22,6 +30,31 @@ public class Task03Main {
             Comparator<? super T> order,
             BiConsumer<? super T, ? super T> minMaxConsumer) {
 
-        // your implementation here
+        if (stream == null || order == null || minMaxConsumer == null) {
+            throw new NullPointerException();
+        }
+
+        Iterator<? extends T> iterator = stream.iterator();
+        if (!iterator.hasNext()) {
+            minMaxConsumer.accept(null, null);
+            return;
+        }
+
+        T min = iterator.next();
+        T max = min;
+
+        while (iterator.hasNext()) {
+            T value = iterator.next();
+
+            if (order.compare(min, value) > 0) {
+                min = value;
+            }
+
+            if (order.compare(max, value) < 0) {
+                max = value;
+            }
+        }
+
+        minMaxConsumer.accept(min, max);
     }
 }
