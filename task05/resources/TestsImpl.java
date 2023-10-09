@@ -1,6 +1,8 @@
 package com.example.task05;
 
-import com.example.task05.ITests;
+import com.example.task05.model.MailMessage;
+import com.example.task05.service.MailService;
+import com.example.task05.model.Salary;
 import org.junit.Test;
 
 import java.util.Arrays;
