@@ -1,6 +1,3 @@
-rootProject.name = '10-java-functional-stream'
+rootProject.name = '11-java-multithreading'
 include 'task01'
 include 'task02'
-include 'task03'
-include 'task04'
-include 'task05'
