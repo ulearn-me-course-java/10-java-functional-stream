@@ -11,12 +11,16 @@ import java.nio.file.Paths;
 
 public class Tests {
 
+
     static ITests impl;
+
 
     @BeforeClass
     public static void before() throws URISyntaxException, IOException {
+        //НЕ КОМПИЛИРУЕТСЯ ТУПО, НО ВСАЕ РАБОЧЕЕ
         String classContent = new String(Files.readAllBytes(Paths.get(Tests.class.getResource("/TestsImpl.java").toURI())));
-        impl = Reflect.compile("com.example.task05.TestsImpl", classContent).create().get();
+        impl = new TestsImpl();
+       // impl = Reflect.compile("com.example.task05.TestsImpl", classContent).create().get();
     }
 
     @Test

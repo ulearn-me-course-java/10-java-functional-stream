@@ -1,5 +1,9 @@
 package com.example.task05;
 
+import com.example.task05.model.MailMessage;
+import com.example.task05.model.Salary;
+import com.example.task05.service.MailService;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -9,7 +13,7 @@ public class Task05Main {
 
     public static void main(String[] args) {
 
-        /*
+
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -88,7 +92,7 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-        */
+
 
     }
 
