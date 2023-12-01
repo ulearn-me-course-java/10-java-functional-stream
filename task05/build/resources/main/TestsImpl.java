@@ -1,15 +1,18 @@
 package com.example.task05;
 
+import com.example.task05.ITests;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class Task05Main {
-
-    public static void main(String[] args) {
+public class TestsImpl implements ITests {
 
 
+    @Test
+    public void testExample() {
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
@@ -66,7 +69,7 @@ public class Task05Main {
                 )
         ) : "wrong mailService mailbox content (2)";
 
-       assert mailBox.get(randomTo).equals(Collections.<String>emptyList()) : "wrong mailService mailbox content (3)";
+        assert mailBox.get(randomTo).equals(Collections.<String>emptyList()) : "wrong mailService mailbox content (3)";
 
 
         // Создание списка из трех зарплат.
@@ -86,6 +89,9 @@ public class Task05Main {
         assert salaries.get(salary1.getTo()).equals(Arrays.asList(1)) : "wrong salaries mailbox content (1)";
         assert salaries.get(salary2.getTo()).equals(Arrays.asList(Integer.MAX_VALUE)) : "wrong salaries mailbox content (2)";
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
+
+
     }
+
 
 }
