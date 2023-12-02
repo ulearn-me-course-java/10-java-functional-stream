@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.task03.Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-12-18T18:44:17" hostname="Админ-ПК" time="10.097">
+  <properties/>
+  <testcase name="testExample" classname="com.example.task03.Tests" time="2.002"/>
+  <testcase name="testBig" classname="com.example.task03.Tests" time="7.864"/>
+  <testcase name="testNPE" classname="com.example.task03.Tests" time="0.225"/>
+  <testcase name="testEmpty" classname="com.example.task03.Tests" time="0.002"/>
+  <testcase name="testNull" classname="com.example.task03.Tests" time="0.002"/>
+  <testcase name="testString" classname="com.example.task03.Tests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
