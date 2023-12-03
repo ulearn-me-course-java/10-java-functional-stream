@@ -1,19 +1,16 @@
 package com.example.task05;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.*;
 
 public class Task05Main {
 
-    public static void main(String[] args) {
-
-        /*
+    public static void main(String[] args) throws URISyntaxException, IOException {
 
         // Random variables
-        String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
-        String randomTo = "...";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
+        String randomFrom = "ромоыв"; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
+        String randomTo = "вмтывм";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
         int randomSalary = 100;  // Некоторое случайное целое положительное число. Можете выбрать его самостоятельно.
 
         // Создание списка из трех почтовых сообщений.
@@ -59,6 +56,8 @@ public class Task05Main {
                 )
         ) : "wrong mailService mailbox content (1)";
 
+
+
         assert mailBox.get("Christopher Nolan").equals(
                 Arrays.asList(
                         "Брат, почему все так хвалят только тебя, когда практически все сценарии написал я. Так не честно!",
@@ -68,11 +67,17 @@ public class Task05Main {
 
         assert mailBox.get(randomTo).equals(Collections.<String>emptyList()) : "wrong mailService mailbox content (3)";
 
-
+        for(Map.Entry<String, List<String>> entry : mailBox.entrySet()){
+            for(String ss : entry.getValue()){
+                System.out.println(entry.getKey());
+                System.out.println(ss);
+            }
+        }
         // Создание списка из трех зарплат.
         Salary salary1 = new Salary("Facebook", "Mark Zuckerberg", 1);
         Salary salary2 = new Salary("FC Barcelona", "Lionel Messi", Integer.MAX_VALUE);
         Salary salary3 = new Salary(randomFrom, randomTo, randomSalary);
+
 
         // Создание почтового сервиса, обрабатывающего зарплаты.
         MailService<Integer> salaryService = new MailService<>();
@@ -86,9 +91,6 @@ public class Task05Main {
         assert salaries.get(salary1.getTo()).equals(Arrays.asList(1)) : "wrong salaries mailbox content (1)";
         assert salaries.get(salary2.getTo()).equals(Arrays.asList(Integer.MAX_VALUE)) : "wrong salaries mailbox content (2)";
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
-
-
-        */
 
     }
 

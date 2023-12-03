@@ -10,7 +10,6 @@ import java.util.Map;
 
 public class TestsImpl implements ITests {
 
-
     @Test
     public void testExample() {
 
