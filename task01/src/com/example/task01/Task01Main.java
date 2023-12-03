@@ -13,15 +13,13 @@ public class Task01Main {
         Function<Object, Integer> ifTrue = obj -> 0;
         Function<CharSequence, Integer> ifFalse = CharSequence::length;
         Function<String, Integer> safeStringLength = ternaryOperator(condition, ifTrue, ifFalse);
-
-
     }
 
     public static <T, U> Function<T, U> ternaryOperator(
             Predicate<? super T> condition,
             Function<? super T, ? extends U> ifTrue,
             Function<? super T, ? extends U> ifFalse) {
-
+        if(condition == null || ifTrue == null || ifFalse == null) throw new NullPointerException();
         return (T t) -> {
             if(condition.test(t)){
                 return ifTrue.apply(t);
