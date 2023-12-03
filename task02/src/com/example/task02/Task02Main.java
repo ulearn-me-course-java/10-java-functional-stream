@@ -25,7 +25,7 @@ public class Task02Main {
         }
 
         return IntStream.iterate(0, x -> x + 1)
-                .map(x -> x % (int) Math.pow(2, n)) // .map(x -> (x & ((2 << (n - 1)) - 1)))
+                .map(x -> x % (int) Math.pow(2, n))
                 .map(x -> x ^ (x >> 1));
     }
 }

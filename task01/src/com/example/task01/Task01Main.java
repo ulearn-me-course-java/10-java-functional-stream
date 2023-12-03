@@ -27,6 +27,12 @@ public class Task01Main {
             throw new NullPointerException();
         }
 
-        return object -> condition.test(object) ? ifTrue.apply(object) : ifFalse.apply(object);
+        return object -> {
+            if (condition.test(object)) {
+                return ifTrue.apply(object);
+            }
+
+            return ifFalse.apply(object);
+        };
     }
 }

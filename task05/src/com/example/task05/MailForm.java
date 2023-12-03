@@ -3,7 +3,11 @@ package com.example.task05;
 public abstract class MailForm<T> {
     private final String from;
     private final String to;
-    private final T content;
+
+    protected MailForm(String from, String to) {
+        this.from = from;
+        this.to = to;
+    }
 
     public String getFrom() {
         return from;
@@ -13,13 +17,5 @@ public abstract class MailForm<T> {
         return to;
     }
 
-    public T getContent() {
-        return content;
-    }
-
-    protected MailForm(String from, String to, T salary) {
-        this.from = from;
-        this.to = to;
-        this.content = salary;
-    }
+    public abstract T getContent();
 }
