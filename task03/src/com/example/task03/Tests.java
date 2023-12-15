@@ -10,22 +10,26 @@ import java.util.function.BiConsumer;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Tests {
+public class Tests
+{
 
-    class MinMaxConsumer<T> implements BiConsumer<T, T> {
+    class MinMaxConsumer<T> implements BiConsumer<T, T>
+    {
 
         T min, max;
         int calls = 0;
 
         @Override
-        public void accept(T min, T max) {
+        public void accept(T min, T max)
+        {
             calls++;
             this.min = min;
             this.max = max;
         }
     }
 
-    public <T> void check(T[] input, Comparator<T> comparator, T expectMin, T expectMax) {
+    public <T> void check(T[] input, Comparator<T> comparator, T expectMin, T expectMax)
+    {
         MinMaxConsumer<T> consumer = new MinMaxConsumer<>();
         Task03Main.findMinMax(Stream.of(input), comparator, consumer);
         SoftAssertions sa = new SoftAssertions();
@@ -36,7 +40,8 @@ public class Tests {
     }
 
     @Test
-    public void testNPE() {
+    public void testNPE()
+    {
         Assertions.assertThatThrownBy(() ->
                 check(null, Integer::compare, 1, 9)
         ).isInstanceOf(NullPointerException.class);
@@ -47,17 +52,20 @@ public class Tests {
     }
 
     @Test
-    public void testExample() {
+    public void testExample()
+    {
         check(new Integer[]{2, 9, 5, 4, 8, 1, 3}, Integer::compare, 1, 9);
     }
 
     @Test
-    public void testEmpty() {
+    public void testEmpty()
+    {
         check(new Integer[]{}, Integer::compare, null, null);
     }
 
     @Test
-    public void testString() {
+    public void testString()
+    {
         check(new String[]{"q", "w", "e", "r", "t", "y"}, String::compareTo, "e", "y");
     }
 
@@ -66,7 +74,8 @@ public class Tests {
      * Попытайтесь не размещать все данные в памяти.
      */
     @Test
-    public void testBig() {
+    public void testBig()
+    {
         MinMaxConsumer<Long> consumer = new MinMaxConsumer<>();
         Task03Main.findMinMax(IntStream.range(7, 200000008).mapToObj(Long::valueOf), Long::compare, consumer);
         SoftAssertions sa = new SoftAssertions();
@@ -77,8 +86,10 @@ public class Tests {
     }
 
     @Test
-    public void testNull() {
-        check(new Object[]{null, 0L}, (a, b) -> {
+    public void testNull()
+    {
+        check(new Object[]{null, 0L}, (a, b) ->
+        {
             if (b == null) return 1;
             else if (a == null) return -1;
             else return 0;
