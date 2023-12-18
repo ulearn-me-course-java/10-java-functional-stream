@@ -20,11 +20,11 @@ public class Task04Main {
                 .flatMap(x -> Stream.of(x.split("[^a-zа-яё0-9]")))
                 .filter(x -> !x.isEmpty())
                 .collect(Collectors.groupingBy(n -> n, Collectors.counting()))
-                .entrySet()// делаем set из map
-                .stream() // создаем стрим из прошлой коллекции
-                .sorted(Comparator.comparingLong((ToLongFunction<Map.Entry<String, Long>>) Map.Entry::getValue)
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue()
                         .reversed()
-                        .thenComparing(Map.Entry::getKey))
+                        .thenComparing(Map.Entry.comparingByKey()))
                 .limit(10)
                 .forEach(str -> System.out.print(str.getKey() + '\n'));
 

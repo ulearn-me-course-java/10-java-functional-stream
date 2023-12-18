@@ -1,6 +1,6 @@
 package com.example.task05;
 
-public class MailMessage extends Frame<String> {
+public class MailMessage extends Message<String> {
 
     public MailMessage(String from, String to, String content) {
 

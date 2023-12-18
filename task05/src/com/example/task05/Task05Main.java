@@ -78,7 +78,7 @@ public class Task05Main {
         MailService<Integer> salaryService = new MailService<>();
 
         // Обработка списка зарплат почтовым сервисом
-        Arrays.asList(salary1, salary2, salary3).forEach(salaryService);
+        Arrays.asList(salary1, salary2, salary3).forEach(x->salaryService.accept(x));
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список зарплат, которые были ему отправлены.

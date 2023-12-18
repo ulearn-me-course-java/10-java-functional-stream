@@ -1,21 +1,15 @@
 package com.example.task05;
 
-public abstract class Frame<T> {
+public abstract class Message<T> {
 
     String from;
     String to;
     T content;
 
-    public Frame(String from, String to, T content) {
+    public Message(String from, String to, T content) {
         this.from = from;
         this.to = to;
         this.content = content;
-    }
-
-    public Frame() {
-        from = null;
-        to = null;
-        content = null;
     }
 
     public String getFrom() {
@@ -29,6 +23,4 @@ public abstract class Frame<T> {
     public T getContent() {
         return this.content;
     }
-
-
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class MailService<T> implements Consumer<Frame<T>> {
+public class MailService<T> implements Consumer<Message<T>> {
 
     private final Map<String, List<T>> mailCollector = new HashMap<String, List<T>>() {
         @Override
@@ -24,7 +24,7 @@ public class MailService<T> implements Consumer<Frame<T>> {
         return this.mailCollector;
     }
     @Override
-    public void accept(Frame<T> frame) {
+    public void accept(Message<T> frame) {
 
         if (mailCollector.containsKey(frame.getTo()))
             mailCollector.get(frame.getTo()).add(frame.getContent());

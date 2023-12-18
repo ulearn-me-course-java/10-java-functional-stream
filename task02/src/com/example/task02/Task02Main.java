@@ -6,11 +6,11 @@ public class Task02Main {
 
     public static void main(String[] args) {
 
-        /*
+
         cycleGrayCode(2)
                 .limit(10)
                 .forEach(System.out::println);
-        */
+
 
     }
 
