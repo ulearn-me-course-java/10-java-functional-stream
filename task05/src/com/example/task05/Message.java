@@ -1,11 +1,11 @@
 package com.example.task05;
 
-public class Message {
-    String from;
-    String to;
-    String content;
+public class Message <T> {
+    private final String from;
+    private final String to;
+    private final T content;
 
-    public Message(String from, String to, String content){
+    public Message(String from, String to, T content){
         this.from = from;
         this.to = to;
         this.content = content;
@@ -19,7 +19,7 @@ public class Message {
         return from;
     }
 
-    public String getContent() {
+    public T getContent() {
         return content;
     }
 }

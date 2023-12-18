@@ -18,7 +18,7 @@ public class Task05Main {
         int randomSalary = 100;  // Некоторое случайное целое положительное число. Можете выбрать его самостоятельно.
 
         // Создание списка из трех почтовых сообщений.
-        MailMessage<String> firstMessage = new MailMessage(
+        MailMessage firstMessage = new MailMessage(
                 "Robert Howard",
                 "H.P. Lovecraft",
                 "This \"The Shadow over Innsmouth\" story is real masterpiece, Howard!"
