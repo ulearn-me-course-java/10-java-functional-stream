@@ -20,8 +20,7 @@ public class MailService<T> implements Consumer<Message<T>> {
     @Override
     public void accept(Message<T> message) {
         if (this.mailBox.containsKey(message.getTo())) {
-            List<T> list = this.mailBox.get(message.getTo());
-            list.add(message.getContent());
+            this.mailBox.get(message.getTo()).add(message.getContent());
         } else {
             List<T> content = new ArrayList<>(Collections.singletonList(message.getContent()));
             this.mailBox.put(message.getTo(), content);
