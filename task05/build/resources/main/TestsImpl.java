@@ -1,21 +1,25 @@
 package com.example.task05;
 
+import com.example.task05.ITests;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class Task05Main {
+public class TestsImpl implements ITests {
 
-    public static void main(String[] args) {
 
+    @Test
+    public void testExample() {
 
         // Random variables
         String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
         String randomTo = "...";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
         int randomSalary = 100;  // Некоторое случайное целое положительное число. Можете выбрать его самостоятельно.
 
-        // Создание списка из трех почтовых сообщений
+        // Создание списка из трех почтовых сообщений.
         MailMessage firstMessage = new MailMessage(
                 "Robert Howard",
                 "H.P. Lovecraft",
@@ -87,7 +91,7 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-
     }
+
 
 }
