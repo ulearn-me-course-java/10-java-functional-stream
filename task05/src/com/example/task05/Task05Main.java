@@ -4,16 +4,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Task05Main {
 
     public static void main(String[] args) {
 
-        /*
+
 
         // Random variables
-        String randomFrom = "..."; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
-        String randomTo = "...";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
+        String randomFrom = "y"; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
+        String randomTo = "n";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
         int randomSalary = 100;  // Некоторое случайное целое положительное число. Можете выбрать его самостоятельно.
 
         // Создание списка из трех почтовых сообщений.
@@ -25,7 +26,7 @@ public class Task05Main {
 
         assert firstMessage.getFrom().equals("Robert Howard") : "Wrong firstMessage from address";
         assert firstMessage.getTo().equals("H.P. Lovecraft") : "Wrong firstMessage to address";
-        assert firstMessage.getContent().endsWith("Howard!") : "Wrong firstMessage content ending";
+        assert firstMessage.getContent().toString().endsWith("Howard!") : "Wrong firstMessage content ending";
 
         MailMessage secondMessage = new MailMessage(
                 "Jonathan Nolan",
@@ -47,7 +48,7 @@ public class Task05Main {
         MailService<String> mailService = new MailService<>();
 
         // Обработка списка писем почтовым сервисом
-        messages.stream().forEachOrdered(mailService);
+        messages.stream().forEachOrdered(mailService::accept);
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список сообщений, которые были ему отправлены
@@ -78,7 +79,7 @@ public class Task05Main {
         MailService<Integer> salaryService = new MailService<>();
 
         // Обработка списка зарплат почтовым сервисом
-        Arrays.asList(salary1, salary2, salary3).forEach(salaryService);
+        Arrays.asList(salary1, salary2, salary3).forEach(salaryService::accept);
 
         // Получение и проверка словаря "почтового ящика",
         //   где по получателю можно получить список зарплат, которые были ему отправлены.
@@ -88,7 +89,7 @@ public class Task05Main {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
 
 
-        */
+
 
     }
 
