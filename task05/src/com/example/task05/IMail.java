@@ -11,6 +11,7 @@ public class IMail<T> {
         this.content = content;
     }
 
+
     public String getFrom() {
         return from;
     }
